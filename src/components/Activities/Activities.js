@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Activity from '../Acivity.js/Activity';
+import Charts from '../Charts/Charts';
 import './Activites.css'
 
 const Activities = () => {
@@ -19,8 +20,8 @@ const Activities = () => {
                     activities.map(activity => <Activity activity={activity} key={activity.id}></Activity>)
                 }
             </div>
-            <div className="continer-cart">
-                <h1>Details</h1>
+            <div className="continer-cart bg-light">
+                <Charts></Charts>
             </div>
         </div>
     );
