@@ -9,3 +9,37 @@
     margin-left: 30px;
     margin-top: 20px;
 }
+
+.btn-break-continer {
+    background-color: lightgray;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.btn-break {
+    margin-left: 10px;
+    background-color: white;
+    color: black;
+    padding: 7px;
+}
+
+.btn-break:hover {
+    background-color: rgb(102, 210, 218);
+    color: white;
+}
+
+.btn-cart-complited {
+    width: 80%;
+    background-color: rgb(102, 210, 218);
+    color: white;
+    border: 1px solid #95A0A7;
+    border-radius: 8px 8px 8px 8px;
+    padding: 12px 0px;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.btn-cart-complited:hover {
+    background-color: orange;
+    color: white;
+}

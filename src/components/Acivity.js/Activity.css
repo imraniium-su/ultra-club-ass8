@@ -7,14 +7,14 @@
 
 .product {
     width: 300px;
-    height: 510px;
+    height: 480px;
     border: 1px solid #95A0A7;
     border-radius: 10px;
     position: relative;
 }
 
 .product-details {
-    margin: 0 14px;
+    margin: 0 18px;
 }
 
 .product-details p {
@@ -24,13 +24,16 @@
 
 .btn-cart {
     width: 80%;
-    background: #c7c0b5;
+    background-color: rgb(102, 210, 218);
+    color: white;
     border: 1px solid #95A0A7;
     border-radius: 8px 8px 8px 8px;
     padding: 12px 0px;
-    margin-top: 40px;
+    margin-top: 20px;
+    margin-left: 30px;
 }
 
 .btn-cart:hover {
     background-color: orange;
+    color: white;
 }

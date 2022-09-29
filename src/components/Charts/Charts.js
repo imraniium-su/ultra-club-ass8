@@ -2,7 +2,16 @@ import React from 'react';
 import './Charts.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapLocation } from '@fortawesome/free-solid-svg-icons'
-const Charts = () => {
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+const Charts = ({ carts }) => {
+    let time = 0;
+    for (const acitivty of carts) {
+        time = parseFloat(time + acitivty.time);
+    }
+    const toastBtn = () => {
+        toast("wow deleted form cart!");
+    }
     return (
         <div>
             <div className='profile-continer'>
@@ -14,7 +23,7 @@ const Charts = () => {
                     <p><FontAwesomeIcon icon={faMapLocation}></FontAwesomeIcon>  Kuala Lumpur</p>
                 </div>
             </div>
-            <div className="d-flex mt-5 m-4 p-2 bg-secondary text-light rounded-3  justify-content-around">
+            <div className="d-flex mt-5 m-3 p-2 bg-secondary text-light rounded-3  justify-content-around">
                 <div className="me-4">
                     <h2>65 <span>kg</span></h2>
                     <p>Weight</p>
@@ -28,6 +37,17 @@ const Charts = () => {
                     <p>Age</p>
                 </div>
             </div>
+            <h3 className='ms-4 mt-4'>Break Time</h3>
+            <div className='btn-break-continer m-4 d-flex justify-content-around p-3'>
+                <button className="  rounded-circle btn-break border border-0" type="submit">20m</button>
+                <button className="  rounded-circle btn-break border border-0" type="submit">20m</button>
+                <button className="  rounded-circle btn-break border border-0" type="submit">20m</button>
+                <button className="  rounded-circle btn-break border border-0" type="submit">20m</button>
+            </div>
+            <h3 className='ms-4 mt-4'>Activity Details</h3>
+            <p className='ms-5 mt-3'>Activity Time:{time} </p><br />
+            <p className='ms-5'>Break Time: </p>
+            <button onClick={toastBtn} className='btn-cart-complited'>Activity Completed</button>
         </div>
     );
 };
