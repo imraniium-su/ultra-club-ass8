@@ -76,8 +76,8 @@ const Charts = ({ carts }) => {
                 <button onClick={() => breakTime(24)} className="  rounded-circle btn-break border border-0" type="submit">24m</button>
             </div>
             <h3 className='ms-4 mt-4'>Activity Details</h3>
-            <p className='ms-5 mt-3'>Activity Time:{time}m </p><br />
-            <p className='ms-5'>Break Time:{value}m </p>
+            <p className='ms-5 mt-3'>Activity Time:{time} m </p><br />
+            <p className='ms-5'>Break Time:{value} m </p>
             <button onClick={toastBtn} className='btn-cart-complited'>Activity Completed</button><ToastContainer />
         </div>
     );
