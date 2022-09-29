@@ -5,6 +5,7 @@ import Charts from '../Charts/Charts';
 import './Activites.css'
 
 
+
 const Activities = () => {
 
     const [activities, setActivities] = useState([]);

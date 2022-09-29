@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Charts.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMapLocation } from '@fortawesome/free-solid-svg-icons'
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Swal from 'sweetalert2';
@@ -28,7 +28,7 @@ const Charts = ({ carts }) => {
                 </div>
                 <div>
                     <h5>Mohammad Imran</h5>
-                    <p><FontAwesomeIcon icon={faMapLocation}></FontAwesomeIcon>  Kuala Lumpur</p>
+                    <p><FontAwesomeIcon icon={faLocationDot}></FontAwesomeIcon>  Kuala Lumpur</p>
                 </div>
             </div>
             <div className="d-flex mt-5 m-3 p-2 bg-secondary text-light rounded-3  justify-content-around">
