@@ -9,6 +9,7 @@ const Activities = () => {
 
     const [activities, setActivities] = useState([]);
     const [carts, setCart] = useState([]);
+
     useEffect(() => {
         fetch('data.json')
             .then(res => res.json())
@@ -28,22 +29,33 @@ const Activities = () => {
         setCart(saveCart);
     }, [activities])
 
-    const handleAddCart = (activity) => {
-        const newCart = [...carts, activity];
+    const handleAddCart = (selectedactivity) => {
+        let newCart = [];
+        const exists = carts.find(activity => activity.id === selectedactivity.id);
+        if (!exists) {
+            selectedactivity.quantity = 1;
+            newCart = [...carts, selectedactivity]
+        }
+        else {
+            const rest = carts.filter(activity => activity.id !== selectedactivity.id);
+            exists.quantity = exists.quantity + 1;
+            newCart = [...rest, exists];
+        }
         setCart(newCart);
-        addToDb(activity.id);
+        // local storage setting/
+        addToDb(selectedactivity.id);
     }
 
 
     return (
-        <div className='shop-continer '>
-            <div className="continer-products">
+        <div className='activity-continer '>
+            <div className="continer-work">
 
                 {
                     activities.map(activity => <Activity activity={activity} key={activity.id} handleAddCart={handleAddCart}></Activity>)
                 }
             </div>
-            <div className="continer-cart bg-light">
+            <div className="continer-details bg-light">
                 <Charts carts={carts}></Charts>
             </div>
         </div>

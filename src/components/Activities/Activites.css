@@ -1,9 +1,9 @@
-.shop-continer {
+.activity-continer {
     display: grid;
     grid-template-columns: 3fr 1fr;
 }
 
-.continer-products {
+.continer-work {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -11,7 +11,7 @@
     margin-left: 70px;
 }
 
-.continer-cart {
+.continer-details {
 
     margin-left: 20px;
     margin-top: 20px;
@@ -19,17 +19,18 @@
 }
 
 @media only screen and (max-width: 620px) {
-    .shop-continer {
+    .activity-continer {
         grid-template-columns: repeat(1, 1fr);
         flex-direction: column;
     }
 
-    .continer-cart {
+    .continer-details {
         order: 1;
+
     }
 
 
-    .continer-products {
+    .continer-work {
         order: 2;
         grid-template-columns: repeat(1, 1fr);
         justify-content: center;

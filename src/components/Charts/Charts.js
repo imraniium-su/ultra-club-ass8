@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Charts.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapLocation } from '@fortawesome/free-solid-svg-icons'
@@ -7,17 +7,19 @@ import 'react-toastify/dist/ReactToastify.css';
 import Swal from 'sweetalert2';
 
 const Charts = ({ carts }) => {
+    // const [breaktime, setBreak] = useState('');
+
     let time = 0;
+    let quantity = 0;
     for (const acitivty of carts) {
-        time = parseFloat(time + acitivty.time);
+        quantity = quantity + acitivty.quantity;
+        time = parseFloat(time + acitivty.time * acitivty.quantity);
     }
     const toastBtn = () => {
         toast("WOW You done Your Activity! Have a nice day!!");
         Swal.fire("Good job!", "You completed your activity!", "success");
     };
-    const breakbtn1 = () => {
-        console.log('ggg');
-    }
+
     return (
         <div className='details-continer'>
             <div className='profile-continer'>
@@ -45,13 +47,13 @@ const Charts = ({ carts }) => {
             </div>
             <h3 className='ms-4 mt-4'>Break Time</h3>
             <div className='btn-break-continer m-4 d-flex justify-content-around p-3'>
-                <button onClick={breakbtn1} className="  rounded-circle btn-break border border-0" type="submit">20m</button>
+                <button className="  rounded-circle btn-break border border-0" type="submit">20m</button>
                 <button className="  rounded-circle btn-break border border-0" type="submit">30m</button>
                 <button className="  rounded-circle btn-break border border-0" type="submit">35m</button>
                 <button className="  rounded-circle btn-break border border-0" type="submit">25m</button>
             </div>
             <h3 className='ms-4 mt-4'>Activity Details</h3>
-            <p className='ms-5 mt-3'>Activity Time:{time} </p><br />
+            <p className='ms-5 mt-3'>Activity Time:{time}m </p><br />
             <p className='ms-5'>Break Time: </p>
             <button onClick={toastBtn} className='btn-cart-complited'>Activity Completed</button><ToastContainer />
         </div>

@@ -8,7 +8,7 @@ const Activity = ({ handleAddCart, activity }) => {
             <img src={picture} alt="" />
             <div className='product-details'>
                 <h3 >{name}</h3>
-                <p>Time :  {time}</p>
+                <p>Time :  {time}m</p>
                 <p>Age: {age}</p>
             </div>
             <button onClick={() => handleAddCart(activity)} className='btn-cart'>Add me</button>
