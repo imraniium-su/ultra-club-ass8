@@ -16,7 +16,7 @@ const Charts = () => {
             </div>
             <div className="d-flex mt-5 m-4 p-2 bg-secondary text-light rounded-3  justify-content-around">
                 <div className="me-4">
-                    <h2>65 kg</h2>
+                    <h2>65 <span>kg</span></h2>
                     <p>Weight</p>
                 </div>
                 <div className="me-4">
@@ -24,7 +24,7 @@ const Charts = () => {
                     <p>Height</p>
                 </div>
                 <div className="me-4">
-                    <h2>25yrs</h2>
+                    <h2>25 <span>yrs</span></h2>
                     <p>Age</p>
                 </div>
             </div>
