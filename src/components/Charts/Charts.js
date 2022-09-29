@@ -7,8 +7,13 @@ import 'react-toastify/dist/ReactToastify.css';
 import Swal from 'sweetalert2';
 
 const Charts = ({ carts }) => {
-    // const [breaktime, setBreak] = useState('');
-
+    const [value, setValue] = useState(0);
+    let newtime = 0;
+    const breakTime = (timebe) => {
+        newtime = newtime + timebe;
+        setValue(newtime);
+        newtime = 0;
+    }
     let time = 0;
     let quantity = 0;
     for (const acitivty of carts) {
@@ -28,7 +33,7 @@ const Charts = ({ carts }) => {
                 </div>
                 <div>
                     <h5>Mohammad Imran</h5>
-                    <p><FontAwesomeIcon icon={faLocationDot}></FontAwesomeIcon>  Kuala Lumpur</p>
+                    <p>Data Engineeer , <FontAwesomeIcon icon={faLocationDot}></FontAwesomeIcon>  Kuala Lumpur</p>
                 </div>
             </div>
             <div className="d-flex mt-5 m-3 p-2 bg-secondary text-light rounded-3  justify-content-around">
@@ -47,14 +52,14 @@ const Charts = ({ carts }) => {
             </div>
             <h3 className='ms-4 mt-4'>Break Time</h3>
             <div className='btn-break-continer m-4 d-flex justify-content-around p-3'>
-                <button className="  rounded-circle btn-break border border-0" type="submit">20m</button>
-                <button className="  rounded-circle btn-break border border-0" type="submit">30m</button>
-                <button className="  rounded-circle btn-break border border-0" type="submit">35m</button>
-                <button className="  rounded-circle btn-break border border-0" type="submit">25m</button>
+                <button onClick={() => breakTime(20)} className="  rounded-circle btn-break border border-0" type="submit">20m</button>
+                <button onClick={() => breakTime(30)} className="  rounded-circle btn-break border border-0" type="submit">30m</button>
+                <button onClick={() => breakTime(35)} className="  rounded-circle btn-break border border-0" type="submit">35m</button>
+                <button onClick={() => breakTime(25)} className="  rounded-circle btn-break border border-0" type="submit">25m</button>
             </div>
             <h3 className='ms-4 mt-4'>Activity Details</h3>
             <p className='ms-5 mt-3'>Activity Time:{time}m </p><br />
-            <p className='ms-5'>Break Time: </p>
+            <p className='ms-5'>Break Time:{value}m </p>
             <button onClick={toastBtn} className='btn-cart-complited'>Activity Completed</button><ToastContainer />
         </div>
     );

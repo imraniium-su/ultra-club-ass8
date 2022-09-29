@@ -3,7 +3,7 @@ import React from 'react';
 const Block = () => {
     return (
         <div className='m-5'>
-            <h1 className='fw-bold mt-4 ms-5'>My block</h1>
+            <h1 className='fw-bold mt-4 ms-5 text-center mb-4'>My Block & <span className='text-danger'>Answer</span></h1>
             <div className="row row row-cols-1 row-cols-md-2 g-4 ">
                 <div className="col-sm-6">
                     <div className="card shadow p-3 mb-5 bg-body rounded ">

@@ -10,6 +10,7 @@ const Activities = () => {
 
     const [activities, setActivities] = useState([]);
     const [carts, setCart] = useState([]);
+    // const [breaktime, setBreaktime] = useState('');
 
     useEffect(() => {
         fetch('data.json')
@@ -46,7 +47,10 @@ const Activities = () => {
         // local storage setting/
         addToDb(selectedactivity.id);
     }
-
+    // const handleclick = (activity) => {
+    //     const newcarts = [...breaktime];
+    //     setBreaktime(newcarts);
+    // }
 
     return (
         <div className='activity-continer '>
@@ -57,7 +61,7 @@ const Activities = () => {
                 }
             </div>
             <div className="continer-details bg-light">
-                <Charts carts={carts}></Charts>
+                <Charts carts={carts} ></Charts>
             </div>
         </div>
     );
