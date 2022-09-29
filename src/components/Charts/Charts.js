@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Charts.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
+import { addToDb, getStoredCart } from '../../utilities/fakedb';
 
 const Charts = ({ carts }) => {
     const [value, setValue] = useState(0);
@@ -12,8 +13,24 @@ const Charts = ({ carts }) => {
     const breakTime = (timebe) => {
         newtime = newtime + timebe;
         setValue(newtime);
-        newtime = 0;
-    }
+
+        addToDb(timebe.newtime);
+    };
+    // useEffect(() => {
+    //     const storedCart = getStoredCart()
+    //     const saveCart = [];
+    //     for (const id in storedCart) {
+
+    //         const addedactivity = value.find(activity => activity.id === id);
+    //         if (addedactivity) {
+    //             const quantity = storedCart[id];
+    //             addedactivity.quantity = quantity;
+    //             saveCart.push(addedactivity);
+    //         }
+    //     }
+    //     setValue(saveCart);
+    // }, [])
+
     let time = 0;
     let quantity = 0;
     for (const acitivty of carts) {
@@ -21,8 +38,8 @@ const Charts = ({ carts }) => {
         time = parseFloat(time + acitivty.time * acitivty.quantity);
     }
     const toastBtn = () => {
-        toast("WOW You done Your Activity! Have a nice day!!");
-        Swal.fire("Good job!", "You completed your activity!", "success");
+        toast("WOW !! You done Your Activity! Have a nice day!!");
+        // Swal.fire("Good job!", "You completed your activity!", "success");
     };
 
     return (
@@ -56,6 +73,7 @@ const Charts = ({ carts }) => {
                 <button onClick={() => breakTime(30)} className="  rounded-circle btn-break border border-0" type="submit">30m</button>
                 <button onClick={() => breakTime(35)} className="  rounded-circle btn-break border border-0" type="submit">35m</button>
                 <button onClick={() => breakTime(25)} className="  rounded-circle btn-break border border-0" type="submit">25m</button>
+                <button onClick={() => breakTime(24)} className="  rounded-circle btn-break border border-0" type="submit">24m</button>
             </div>
             <h3 className='ms-4 mt-4'>Activity Details</h3>
             <p className='ms-5 mt-3'>Activity Time:{time}m </p><br />

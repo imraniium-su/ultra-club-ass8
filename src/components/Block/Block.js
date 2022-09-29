@@ -39,7 +39,7 @@ const Block = () => {
 
             <div>
                 <hr className='mt-3 mb-3' />
-                <p class="text-center text-gray fw-bold">Copyright@ 2021 My Activity</p>
+                <p class="text-center text-gray fw-bold">Copyright@ 2022 My Activity</p>
             </div>
 
         </div>
