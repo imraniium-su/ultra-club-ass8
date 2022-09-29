@@ -15,6 +15,9 @@ const Charts = ({ carts }) => {
         toast("WOW You done Your Activity! Have a nice day!!");
         Swal.fire("Good job!", "You completed your activity!", "success");
     };
+    const breakbtn1 = () => {
+        console.log('ggg');
+    }
     return (
         <div className='details-continer'>
             <div className='profile-continer'>
@@ -42,7 +45,7 @@ const Charts = ({ carts }) => {
             </div>
             <h3 className='ms-4 mt-4'>Break Time</h3>
             <div className='btn-break-continer m-4 d-flex justify-content-around p-3'>
-                <button className="  rounded-circle btn-break border border-0" type="submit">20m</button>
+                <button onClick={breakbtn1} className="  rounded-circle btn-break border border-0" type="submit">20m</button>
                 <button className="  rounded-circle btn-break border border-0" type="submit">30m</button>
                 <button className="  rounded-circle btn-break border border-0" type="submit">35m</button>
                 <button className="  rounded-circle btn-break border border-0" type="submit">25m</button>
