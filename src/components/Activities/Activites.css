@@ -12,6 +12,27 @@
 }
 
 .continer-cart {
+
     margin-left: 20px;
     margin-top: 20px;
+
+}
+
+@media only screen and (max-width: 620px) {
+    .shop-continer {
+        grid-template-columns: repeat(1, 1fr);
+        flex-direction: column;
+    }
+
+    .continer-cart {
+        order: 1;
+    }
+
+
+    .continer-products {
+        order: 2;
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+        flex-direction: column;
+    }
 }

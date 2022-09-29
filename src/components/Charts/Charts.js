@@ -4,16 +4,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapLocation } from '@fortawesome/free-solid-svg-icons'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Swal from 'sweetalert2';
+
 const Charts = ({ carts }) => {
     let time = 0;
     for (const acitivty of carts) {
         time = parseFloat(time + acitivty.time);
     }
     const toastBtn = () => {
-        toast("wow deleted form cart!");
-    }
+        toast("WOW You done Your Activity! Have a nice day!!");
+        Swal.fire("Good job!", "You completed your activity!", "success");
+    };
     return (
-        <div>
+        <div className='details-continer'>
             <div className='profile-continer'>
                 <div className="me-4">
                     <img className='rounded-4 profile' src="https://media.istockphoto.com/photos/headshot-portrait-of-smiling-male-employee-in-office-picture-id1309328823?k=20&m=1309328823&s=612x612&w=0&h=RqA2lYygvOxisNPp6UwFjz7bCw_rYITJMqFTMSrhpis=" alt="" />
@@ -40,14 +43,14 @@ const Charts = ({ carts }) => {
             <h3 className='ms-4 mt-4'>Break Time</h3>
             <div className='btn-break-continer m-4 d-flex justify-content-around p-3'>
                 <button className="  rounded-circle btn-break border border-0" type="submit">20m</button>
-                <button className="  rounded-circle btn-break border border-0" type="submit">20m</button>
-                <button className="  rounded-circle btn-break border border-0" type="submit">20m</button>
-                <button className="  rounded-circle btn-break border border-0" type="submit">20m</button>
+                <button className="  rounded-circle btn-break border border-0" type="submit">30m</button>
+                <button className="  rounded-circle btn-break border border-0" type="submit">35m</button>
+                <button className="  rounded-circle btn-break border border-0" type="submit">25m</button>
             </div>
             <h3 className='ms-4 mt-4'>Activity Details</h3>
             <p className='ms-5 mt-3'>Activity Time:{time} </p><br />
             <p className='ms-5'>Break Time: </p>
-            <button onClick={toastBtn} className='btn-cart-complited'>Activity Completed</button>
+            <button onClick={toastBtn} className='btn-cart-complited'>Activity Completed</button><ToastContainer />
         </div>
     );
 };
